@@ -1,0 +1,6 @@
+<launch>
+	<include file="$(find cui_encoders)/launch/cui_encoders.launch"/>
+	<node pkg="sabertooth" name="sabertooth" type="sabertooth"/>
+	<node pkg="arm_control" name="angle_control_node" type="angle_control_node" output="screen">	
+	</node>
+</launch>

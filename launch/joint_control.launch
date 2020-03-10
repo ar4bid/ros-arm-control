@@ -1,0 +1,9 @@
+<launch>
+	<include file="$(find cui_encoders)/launch/cui_encoders.launch"/>
+	<node pkg="sabertooth" name="sabertooth" type="sabertooth"/>
+	<node pkg="rosbridge_server" name="joystick" type="rosbridge_websocket"/>	
+	<node pkg="arm_control" name="joint_control_node" type="joint_control_node" output="screen"> 
+		<param name="postion_gains/wrist/Kp" type="double" value="1"/>
+		
+	</node>
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+	<include file="$(find cui_encoders)/launch/cui_encoders.launch"/>
+	<node pkg="sabertooth" name="sabertooth" type="sabertooth"/>
+	<node pkg="phidgets_high_speed_encoder" name="phidgets_high_speed_encoder" type="phidgets_high_speed_encoder"/>
+	<node pkg="rosbridge_server" name="joystick" type="rosbridge_websocket"/>
+
+	
+	
+	<node pkg="arm_control" name="preset_control_node" type="preset_control_node" output="screen">
+		<param name="postion_gains/wrist/Kp" type="double" value="1"/>
+		
+	</node>
+</launch>
